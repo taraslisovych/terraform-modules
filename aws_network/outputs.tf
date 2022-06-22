@@ -13,3 +13,7 @@ output "ter_private_net_ids" {
 output "ter_public_net_ids" {
   value = aws_subnet.terPublicSubnets[*].id
 }
+
+output "ter_public_key" {
+  value = aws_key_pair.kp.public_key
+}
