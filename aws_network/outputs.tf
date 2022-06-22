@@ -14,6 +14,6 @@ output "ter_public_net_ids" {
   value = aws_subnet.terPublicSubnets[*].id
 }
 
-output "ter_public_key" {
-  value = aws_key_pair.kp.public_key
+output "ter_rsa_key_name" {
+  value = aws_key_pair.kp.key_name
 }
