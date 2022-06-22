@@ -70,13 +70,13 @@ resource "aws_route_table_association" "terRTtoPublicSubnet" {
 
 resource "aws_security_group" "terDefaultSG" {
   vpc_id = aws_vpc.terVPC.id
-  name   = "allow ssh and http(s)"
+  name   = "allow all traffic"
 
   ingress {
-    description = "Allow SSH"
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
+    description = "Allow all"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
