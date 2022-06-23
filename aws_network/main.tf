@@ -99,7 +99,7 @@ resource "tls_private_key" "pk" {
 }
 
 resource "aws_key_pair" "kp" {
-  key_name   = "${var.env} key" # Create a "myKey" to AWS!!
+  key_name   = "${var.env}_key" # Create a "myKey" to AWS!!
   public_key = tls_private_key.pk.public_key_openssh
 
   /*  provisioner "local-exec" { # Create a "myKey.pem" to your computer!!
